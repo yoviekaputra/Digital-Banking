@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Digital Banking</string>
+
+    <!-- Dialog -->
+    <string name="ok">OK</string>
+    <string name="yes">Ya</string>
+    <string name="next">Lanjut ></string>
+    <string name="submit">Submit</string>
+    <string name="done">Selesai</string>
+    <string name="cancel">Batal</string>
+    <string name="exit">Keluar</string>
+    <string name="confirmation">Konfirmasi</string>
+    <string name="warning">Perhatian</string>
+    <string name="caution">Peringantan</string>
+</resources>

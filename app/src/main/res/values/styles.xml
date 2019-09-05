@@ -1,0 +1,105 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="materialButtonStyle">@style/AppButton</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <!--<item name="backgroundTint">?attr/colorSecondary</item>-->
+        <item name="cornerRadius">50dp</item>
+        <item name="rippleColor">@color/rippleButtonColor</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/strokeButtonColor</item>
+    </style>
+
+    <style name="AppButton.Blue" parent="AppButton">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <!--Dialog backround-->
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="showTitle">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    </style>
+
+    <!-- COMPONENT -->
+
+    <style name="TextViewDefault" parent="android:TextAppearance">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="CardViewTheme" parent="Base.CardView">
+        <item name="cardMaxElevation">@dimen/card_elevation_big</item>
+        <item name="cardElevation">@dimen/card_elevation_big</item>
+        <item name="cardCornerRadius">@dimen/card_radius_small</item>
+
+        <item name="android:layout_marginTop">@dimen/margin_extra_small</item>
+        <item name="android:layout_marginBottom">@dimen/margin_extra_small</item>
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:clipToPadding">true</item>
+    </style>
+
+    <!--___________ TEXT SIZE ___________-->
+    <style name="TextViewDefault.ExtraSmall" parent="TextViewDefault">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextViewDefault.Small" parent="TextViewDefault">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextViewDefault.Medium" parent="TextViewDefault">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextViewDefault.Big" parent="TextViewDefault">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextViewDefault.ExtraBig" parent="TextViewDefault">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="TextViewDefault.MultiExtraBig" parent="TextViewDefault">
+        <item name="android:textSize">46sp</item>
+    </style>
+
+    <!--___________ TEXT BOLD ___________-->
+
+    <style name="TextViewDefault.SmallBold" parent="TextViewDefault.Small">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewDefault.MediumBold" parent="TextViewDefault.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewDefault.BigBold" parent="TextViewDefault.Big">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewDefault.ExtraBigBold" parent="TextViewDefault.ExtraBig">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewDefault.MultiExtraBigBold" parent="TextViewDefault.MultiExtraBig">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_double_extra_small">2dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_big">21dp</dimen>
+    <dimen name="margin_extra_big">32dp</dimen>
+    <dimen name="margin_multi_extra_big">64dp</dimen>
+    <dimen name="margin_multi_double_extra_big">84dp</dimen>
+
+    <dimen name="margin_stepper_indicator">13dp</dimen>
+
+    <dimen name="divider">1dp</dimen>
+    <dimen name="divider_big">2dp</dimen>
+
+    <dimen name="header_width">230dp</dimen>
+    <dimen name="logo_height">110dp</dimen>
+    <dimen name="logo_width">100dp</dimen>
+
+    <dimen name="photo_size">64dp</dimen>
+    <dimen name="loading_size">24dp</dimen>
+
+    <dimen name="card_radius_multi_small">0.5dp</dimen>
+    <dimen name="card_radius_double_small">1dp</dimen>
+    <dimen name="card_radius_small">2dp</dimen>
+    <dimen name="card_radius_medium">4dp</dimen>
+    <dimen name="card_radius_big">6dp</dimen>
+    <dimen name="card_round">25dp</dimen>
+    <dimen name="card_round_big">40dp</dimen>
+
+    <dimen name="bottom_sheet_radius_small">15dp</dimen>
+    <dimen name="bottom_sheet_radius_medium">20dp</dimen>
+    <dimen name="bottom_sheet_radius_big">25dp</dimen>
+
+    <dimen name="progressbar_small">30dp</dimen>
+    <dimen name="progressbar_medium">40dp</dimen>
+    <dimen name="progressbar_big">60dp</dimen>
+
+    <dimen name="card_elevation_small">1dp</dimen>
+    <dimen name="card_elevation_medium">1.5dp</dimen>
+    <dimen name="card_elevation_big">2dp</dimen>
+
+    <dimen name="icon_status">16dp</dimen>
+    <dimen name="icon_title">72dp</dimen>
+    <dimen name="icon_marker">40dp</dimen>
+    <dimen name="icon_edit_detail">45dp</dimen>
+
+    <dimen name="dialog_success_width">200dp</dimen>
+    <dimen name="dialog_detail_group_width">300dp</dimen>
+
+    <dimen name="map_height_detail_alpro">150dp</dimen>
+    <dimen name="map_radius">80dp</dimen>
+</resources>
