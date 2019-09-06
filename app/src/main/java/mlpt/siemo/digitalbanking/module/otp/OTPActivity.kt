@@ -1,4 +1,4 @@
-package mlpt.siemo.digitalbanking.module
+package mlpt.siemo.digitalbanking.module.otp
 
 import android.os.Bundle
 import android.os.Handler

@@ -3,7 +3,7 @@
           xmlns:dist="http://schemas.android.com/apk/distribution"
           package="mlpt.siemo.digitalbanking">
 
-    <dist:module dist:instant="true"/>
+    <dist:module dist:instant="true"/> <!-- Step 1: Add the following permission to the app -->
 
     <application
             android:allowBackup="true"
@@ -12,7 +12,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".module.OTPActivity">
+        <activity android:name=".module.fingerprint.FingerPrintActivity" />
+        <activity android:name=".module.otp.OTPActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

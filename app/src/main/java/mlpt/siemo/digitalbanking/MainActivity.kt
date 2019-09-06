@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import mlpt.siemo.digitalbanking.R
 import mlpt.siemo.digitalbanking.base.MainItem
-import mlpt.siemo.digitalbanking.module.OTPActivity
+import mlpt.siemo.digitalbanking.module.otp.OTPActivity
+import mlpt.siemo.digitalbanking.module.fingerprint.FingerPrintActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +24,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupData() {
         mainAdapter = MainAdapter {
-            startActivity(Intent(this, OTPActivity::class.java))
+            when (it.icon) {
+                0,1 -> startActivity(Intent(this, OTPActivity::class.java))
+                2 -> startActivity(Intent(this, FingerPrintActivity::class.java))
+            }
         }
 
         mainAdapter.addItem(MainItem(0, "OTP", ""))
