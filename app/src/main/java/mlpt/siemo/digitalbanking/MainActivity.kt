@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import mlpt.siemo.digitalbanking.base.MainItem
 import mlpt.siemo.digitalbanking.module.otp.OTPActivity
 import mlpt.siemo.digitalbanking.module.fingerprint.FingerPrintActivity
+import mlpt.siemo.digitalbanking.module.videocall.VideoCallActiviy
 import java.security.AccessController.getContext
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             when (it.icon) {
                 0,1 -> startActivity(Intent(this, OTPActivity::class.java))
                 2 -> startActivity(Intent(this, FingerPrintActivity::class.java))
+                5 -> startActivity(Intent(this, VideoCallActiviy::class.java))
             }
         }
 
@@ -43,8 +45,8 @@ class MainActivity : AppCompatActivity() {
         mainAdapter.addItem(MainItem(2, "Finger Print", ""))
         mainAdapter.addItem(MainItem(3, "Face ID", ""))
         mainAdapter.addItem(MainItem(4, "NFC", ""))
-        mainAdapter.addItem(MainItem(4, "QRIS", ""))
-        mainAdapter.addItem(MainItem(4, "Payment", ""))
+        mainAdapter.addItem(MainItem(5, "Video Call", ""))
+        mainAdapter.addItem(MainItem(6, "Payment", ""))
     }
 
     private fun setupView() {

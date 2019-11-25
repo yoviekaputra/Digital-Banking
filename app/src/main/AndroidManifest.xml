@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:dist="http://schemas.android.com/apk/distribution"
-          package="mlpt.siemo.digitalbanking">
+        xmlns:dist="http://schemas.android.com/apk/distribution"
+        package="mlpt.siemo.digitalbanking">
 
-    <dist:module dist:instant="true"/>
+    <dist:module dist:instant="true" />
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-            android:allowBackup="true"
             android:name=".AppContext"
+            android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".module.nfc.EMoneyActivity">
-        </activity>
-        <activity android:name=".module.fingerprint.FingerPrintActivity"/>
-        <activity android:name=".module.otp.OTPActivity">
-        </activity>
+        <activity android:name=".module.videocall.VideoCallActiviy"></activity>
+        <activity android:name=".module.nfc.EMoneyActivity"></activity>
+        <activity android:name=".module.fingerprint.FingerPrintActivity" />
+        <activity android:name=".module.otp.OTPActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <receiver android:name="mlpt.siemo.digitalbanking.SimStateReceiver">
+        <receiver android:name=".SimStateReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>
