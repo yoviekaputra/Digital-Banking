@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#E4E4E4</color>
+    <color name="colorPrimaryThree">#0090D5</color>
     <color name="colorAccent">@color/white</color>
     <color name="colorError">@color/white</color>
     <color name="colorBackground">@color/white</color>

@@ -1,6 +1,7 @@
 package mlpt.siemo.digitalbanking.module.fingerprint
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
@@ -30,7 +31,8 @@ class FingerPrintActivity : AppCompatActivity() {
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                 super.onAuthenticationSucceeded(result)
-                toast("Auth success")
+                Log.d("finger", "Auth success $result")
+                toast("Auth success " + result.cryptoObject)
             }
 
             override fun onAuthenticationFailed() {
