@@ -14,14 +14,26 @@ import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 
 
-class VideoCallActiviy : AppCompatActivity(), Session.SessionListener,
-    PublisherKit.PublisherListener, WebServiceCoordinator.Listener {
+class VideoCallActivity : AppCompatActivity(),
+    Session.SessionListener,
+    PublisherKit.PublisherListener,
+    SubscriberKit.SubscriberListener,
+    WebServiceCoordinator.Listener {
+
+    override fun onConnected(p0: SubscriberKit?) {
+    }
+
+    override fun onDisconnected(p0: SubscriberKit?) {
+    }
+
+    override fun onError(p0: SubscriberKit?, p1: OpentokError?) {
+    }
+
     companion object {
         const val API_KEY = "46431132"
         const val SESSION_ID = "1_MX40NjQzMTEzMn5-MTU3NDY4MzU0NTkzMH5neWNBSW9EZzZkRjUrQXh0VmtDeURKL1p-fg"
         const val TOKEN = "T1==cGFydG5lcl9pZD00NjQzMTEzMiZzaWc9Njc1MDdmODgwN2M4OWU4ZTEwN2U3NzdmYmYyZDhkYTQyMDNjNzkxNDpzZXNzaW9uX2lkPTFfTVg0ME5qUXpNVEV6TW41LU1UVTNORFk0TXpVME5Ua3pNSDVuZVdOQlNXOUVaelprUmpVclFYaDBWbXREZVVSS0wxcC1mZyZjcmVhdGVfdGltZT0xNTc0NjgzNTcwJm5vbmNlPTAuODE0NTgzOTU0MzIxNTgwMyZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNTc3Mjc1NTY5JmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
         val LOG_TAG = MainActivity::class.java.simpleName
-        const val RC_SETTINGS_SCREEN_PERM = 123
         const val RC_VIDEO_APP_PERM = 124
     }
 
@@ -40,16 +52,12 @@ class VideoCallActiviy : AppCompatActivity(), Session.SessionListener,
 
     override fun onResume() {
         super.onResume()
-        mSession?.let {
-            it.onResume()
-        }
+        mSession?.onResume()
     }
 
     override fun onPause() {
         super.onPause()
-        mSession?.let {
-            it.onPause()
-        }
+        mSession?.onPause()
     }
 
     override fun onRequestPermissionsResult(
@@ -116,7 +124,7 @@ class VideoCallActiviy : AppCompatActivity(), Session.SessionListener,
         Log.i(LOG_TAG, "Session Connected")
         mPublisher = Publisher.Builder(this).build()
         mPublisher?.apply {
-            setPublisherListener(this@VideoCallActiviy)
+            setPublisherListener(this@VideoCallActivity)
             renderer.setStyle(BaseVideoRenderer.STYLE_VIDEO_SCALE, BaseVideoRenderer.STYLE_VIDEO_FILL)
 
             publisher_container.addView(view)
@@ -144,7 +152,7 @@ class VideoCallActiviy : AppCompatActivity(), Session.SessionListener,
 
     override fun onStreamReceived(p0: Session?, p1: Stream?) {
         mSubscriber?.apply {
-            mSubscriber = Subscriber.Builder(this@VideoCallActiviy, p1).build()
+            mSubscriber = Subscriber.Builder(this@VideoCallActivity, p1).build()
             renderer.setStyle(BaseVideoRenderer.STYLE_VIDEO_SCALE, BaseVideoRenderer.STYLE_VIDEO_FILL)
             p0?.subscribe(this)
             subscriber_container.addView(this.view)
@@ -191,7 +199,7 @@ class VideoCallActiviy : AppCompatActivity(), Session.SessionListener,
             .setMessage(errorMessage)
             .setPositiveButton(
                 "ok"
-            ) { dialog, which -> this.finish() }
+            ) { _, _ -> this.finish() }
             .setIcon(android.R.drawable.ic_dialog_alert)
             .show()
     }

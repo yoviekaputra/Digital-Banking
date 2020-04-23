@@ -13,8 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import mlpt.siemo.digitalbanking.base.MainItem
 import mlpt.siemo.digitalbanking.module.otp.OTPActivity
 import mlpt.siemo.digitalbanking.module.fingerprint.FingerPrintActivity
-import mlpt.siemo.digitalbanking.module.videocall.VideoCallActiviy
-import java.security.AccessController.getContext
+import mlpt.siemo.digitalbanking.module.videocall.VideoCallActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,10 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setupData()
         setupView()
-        Log.e("SimStateReceiver", ">>>>" +SPManager.getString(this, "SimStateReceiver"))
-
-        val a = Settings.Secure.getString(contentResolver, Settings.Secure.DEVICE_PROVISIONED)
-        Log.e("SimStateReceiver", a)
     }
 
     private fun setupData() {
@@ -36,17 +31,17 @@ class MainActivity : AppCompatActivity() {
             when (it.icon) {
                 0,1 -> startActivity(Intent(this, OTPActivity::class.java))
                 2 -> startActivity(Intent(this, FingerPrintActivity::class.java))
-                5 -> startActivity(Intent(this, VideoCallActiviy::class.java))
+                5 -> startActivity(Intent(this, VideoCallActivity::class.java))
             }
         }
 
-        mainAdapter.addItem(MainItem(0, "OTP", ""))
+        /*mainAdapter.addItem(MainItem(0, "OTP", ""))
         mainAdapter.addItem(MainItem(1, "PIN", ""))
         mainAdapter.addItem(MainItem(2, "Finger Print", ""))
         mainAdapter.addItem(MainItem(3, "Face ID", ""))
         mainAdapter.addItem(MainItem(4, "NFC", ""))
         mainAdapter.addItem(MainItem(5, "Video Call", ""))
-        mainAdapter.addItem(MainItem(6, "Payment", ""))
+        mainAdapter.addItem(MainItem(6, "Payment", ""))*/
     }
 
     private fun setupView() {
